@@ -1,0 +1,91 @@
+body
+	padding-top: rows(10)
+	padding-bottom: rows(5)
+
+#{$txt-headers}
+	font-family: $alternate
+	font-weight: bold
+
+h1
+	font-size: 2em
+	margin-bottom: rows(10)
+
+h2
+	font-size: 1.5em
+	margin-top: rows(4)
+	position: relative
+	left: columns(-1) + gutters(-1)
+	margin-bottom: rows(2)
+
+p 
+	max-width: 46rem
+
+.timestamp
+	font-family: $alternate
+	position: absolute
+	width: columns(1)
+	margin-left: columns(-1) + gutters(-1)
+	left: 0
+	font-size: .96125em
+	font-weight: bold
+	.hour
+		font-weight: normal
+		font-style: italic
+
+.entry
+	position: relative
+	width: columns(5)
+	margin-bottom: rows(3)
+	max-width: 40rem
+	clear: both
+	+clearfix
+	// min-height: rows(5)
+	p
+		float: left
+		page-break-inside: avoid
+		width: columns(4.5)
+	// p ~ .masonry
+
+main
+	left: columns(1.5)
+	position: relative
+	width: columns(6)
+	// max-width: 40rem
+
+// .screenshot
+	position: absolute
+	left: 100%
+	margin-left: gutters(1) + columns(1)
+	max-width: columns(3)
+	max-height: 100%
+	top: 0
+	opacity: 0
+	&:first-of-type
+		opacity: 1
+
+.masonry
+	position: relative
+	width: columns(4)
+	margin-left: columns(5)
+	&:hover
+		&:before
+			content: "Cliquez les images pour les agrandir/rétrécir"
+			position: absolute
+			left: 0
+			top: 0
+			margin-top: rows(-1)
+			display: block
+			font-size: .75em
+
+.screenshot
+	width: columns(1)
+	margin-bottom: rows(.5)
+	cursor: pointer
+	transition: all .2s ease-in-out
+	&.full
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0 !important
+		z-index: 1
+
